@@ -5,7 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    current: 0,
+    swiperList: [
+      {
+        imageUrl: '../../assets/images/swiper-example.png',
+        type: 'url',
+        target: 'http://baidu.com'
+      },
+      {
+        imageUrl: '../../assets/images/swiper-example.png',
+        type: 'product',
+        target: '1'
+      },
+      {
+        imageUrl: '../../assets/images/swiper-example.png',
+        type: 'url',
+        target: 'http://baidu.com'
+      }
+    ]
   },
 
   /**
@@ -62,5 +79,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  onSwiperChange(e:any) {
+    const { current } = e.detail
+    this.setData({
+      current
+    })
   }
 })
